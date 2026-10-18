@@ -1,422 +1,464 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Sourviaa | Thoughtful Sourcing. Exceptional Products.</title>
-
-  <meta name="description" content="Discover distinctive products and reliable sourcing solutions with Sourviaa. Explore American Mahjong and tailored product sourcing services.">
-
-  <meta name="theme-color" content="#f8f5ef">
-
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Sourviaa helps businesses discover products, research suppliers, and coordinate sourcing projects.">
+  <title>Sourviaa | Product Sourcing & Procurement</title>
 
   <style>
     :root {
-      --cream: #f8f5ef;
-      --sand: #e9dfd0;
-      --brown: #514236;
-      --dark: #29251f;
-      --muted: #777067;
-      --white: #ffffff;
-      --line: #e7e0d6;
+      --blue: #315efb;
+      --ink: #111318;
+      --muted: #646b76;
+      --line: #e5e7eb;
+      --light: #f5f6f8;
+      --white: #fff;
+      --width: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      color: var(--dark);
-      background: var(--cream);
+      color: var(--ink);
+      background: var(--white);
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(var(--width), 90%);
+      margin: 0 auto;
     }
 
-    .announcement {
-      padding: 9px 20px;
-      background: var(--brown);
-      color: var(--white);
-      text-align: center;
-      font-size: 11px;
-      letter-spacing: 1.5px;
+    .topline {
+      height: 5px;
+      background: var(--blue);
     }
 
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(248, 245, 239, 0.96);
+    header {
+      background: #fff;
       border-bottom: 1px solid var(--line);
     }
 
     .nav {
-      width: min(1160px, 90%);
       min-height: 82px;
-      margin: auto;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 28px;
     }
 
-    .brand {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 27px;
-      font-weight: bold;
-      letter-spacing: 4px;
-    }
-
-    .brand small {
-      display: block;
-      margin-top: -7px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 8px;
-      font-weight: normal;
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
       letter-spacing: 3px;
-      text-align: center;
+      white-space: nowrap;
     }
 
-    .nav-links {
+    .logo span { color: var(--blue); }
+
+    .navlinks {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 27px;
       font-size: 12px;
+      font-weight: 600;
     }
 
-    .nav-links a:hover {
-      color: var(--muted);
-    }
+    .navlinks a:not(.btn):hover { color: var(--blue); }
 
-    .button {
-      display: inline-block;
-      padding: 13px 22px;
-      border: 1px solid var(--brown);
-      background: var(--brown);
-      color: var(--white);
+    .btn {
+      display: inline-flex;
+      min-height: 47px;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 12px 19px;
+      background: var(--blue);
+      border: 1px solid var(--blue);
+      color: #fff;
       font-size: 12px;
-      letter-spacing: 0.5px;
-      text-align: center;
-      transition: 0.2s ease;
+      font-weight: 700;
+      transition: background .2s, transform .2s;
     }
 
-    .button:hover {
-      background: var(--dark);
-      border-color: var(--dark);
+    .btn:hover {
+      background: #2048d8;
+      transform: translateY(-1px);
     }
 
-    .button-outline {
+    .btn-dark {
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .btn-dark:hover { background: #333740; }
+
+    .btn-outline {
       background: transparent;
-      color: var(--brown);
+      color: var(--ink);
+      border-color: #cfd3da;
     }
 
-    .button-outline:hover {
-      color: var(--white);
+    .btn-outline:hover {
+      background: var(--light);
+      color: var(--ink);
     }
 
     .hero {
-      width: min(1160px, 90%);
-      min-height: 570px;
-      margin: auto;
-      padding: 65px 0;
+      padding: 94px 0 82px;
       display: grid;
-      grid-template-columns: 1fr 0.9fr;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 70px;
       align-items: center;
-      gap: 65px;
     }
 
     .eyebrow {
-      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 23px;
+      color: var(--blue);
       font-size: 10px;
-      letter-spacing: 3px;
+      font-weight: 800;
+      letter-spacing: 2px;
       text-transform: uppercase;
     }
 
-    h1, h2, h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: normal;
-      line-height: 1.2;
+    .eyebrow::before {
+      content: "";
+      width: 25px;
+      height: 2px;
+      background: var(--blue);
     }
+
+    h1, h2, h3, p { margin-top: 0; }
 
     h1 {
-      max-width: 600px;
-      margin: 20px 0;
-      font-size: clamp(43px, 5vw, 67px);
-      letter-spacing: -1.8px;
+      max-width: 700px;
+      margin-bottom: 24px;
+      font-size: clamp(43px, 5.8vw, 74px);
+      line-height: 1.04;
+      letter-spacing: -3.8px;
+      font-weight: 800;
     }
+
+    h1 span { color: var(--blue); }
 
     .hero-copy {
-      max-width: 470px;
+      max-width: 510px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 16px;
+      line-height: 1.85;
     }
 
-    .hero-actions {
+    .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 30px;
+      margin-top: 31px;
     }
 
     .hero-note {
-      margin-top: 30px;
-      color: var(--muted);
+      margin-top: 25px;
+      margin-bottom: 0;
+      color: #7b818b;
       font-size: 11px;
-      letter-spacing: 0.5px;
     }
 
-    .hero-art {
+    .visual {
       position: relative;
-      min-height: 420px;
+      min-height: 430px;
+      padding: 25px;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background:
-        radial-gradient(ellipse at 70% 25%, #fdfbf7 0%, transparent 40%),
-        linear-gradient(145deg, #e9dfd0, #d8c6b0);
+      background: #f0f2f5;
     }
 
-    .art-circle {
+    .visual::before {
+      content: "";
       position: absolute;
-      width: 280px;
-      height: 280px;
-      border: 1px solid rgba(81, 66, 54, 0.25);
+      top: -85px;
+      right: -85px;
+      width: 290px;
+      height: 290px;
+      border: 55px solid rgba(49, 94, 251, .09);
       border-radius: 50%;
     }
 
-    .art-circle.second {
-      width: 350px;
-      height: 350px;
-    }
-
-    .tile-display {
+    .visual-label {
       position: relative;
       z-index: 1;
-      width: 245px;
-      padding: 20px;
-      background: #fdfbf7;
-      border: 1px solid #d8cbb9;
-      box-shadow: 0 25px 55px rgba(67, 48, 32, 0.13);
-      transform: rotate(-5deg);
+      color: #656c78;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.7px;
     }
 
-    .tile-grid {
+    .tile-panel {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: min(77%, 330px);
+      padding: 17px;
+      background: white;
+      border: 1px solid #dfe2e7;
+      box-shadow: 0 25px 65px rgba(17, 19, 24, .12);
+      transform: translate(-50%, -48%) rotate(-4deg);
+    }
+
+    .tiles {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 9px;
     }
 
     .tile {
-      aspect-ratio: 0.78;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #d8cbb9;
-      background: #fffefa;
-      color: #66785b;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 25px;
+      display: grid;
+      aspect-ratio: .78;
+      place-items: center;
+      background: #fafafa;
+      border: 1px solid #e0e2e5;
+      color: #315efb;
+      font-family: Georgia, serif;
+      font-size: clamp(22px, 3vw, 33px);
     }
 
     .tile:nth-child(2),
-    .tile:nth-child(6) {
-      color: #a74e43;
-    }
+    .tile:nth-child(6) { color: #d14949; }
 
     .tile:nth-child(3),
-    .tile:nth-child(7) {
-      color: #536d8a;
-    }
+    .tile:nth-child(8) { color: #25865b; }
 
-    .art-caption {
+    .visual-bottom {
       position: absolute;
-      right: 22px;
-      bottom: 18px;
-      color: #66584a;
+      right: 24px;
+      bottom: 20px;
+      left: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: #606774;
       font-size: 9px;
-      letter-spacing: 2px;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
-    .trust-strip {
-      padding: 23px 5%;
+    .metrics {
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
+    }
+
+    .metrics-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .metric {
+      padding: 23px 25px;
+      border-right: 1px solid var(--line);
+    }
+
+    .metric:first-child { padding-left: 0; }
+
+    .metric:last-child { border-right: 0; }
+
+    .metric strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .section { padding: 95px 0; }
+
+    .section-head {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px 65px;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 36px;
+    }
+
+    .section-head h2 {
+      max-width: 600px;
+      margin-bottom: 0;
+      font-size: clamp(34px, 4vw, 48px);
+      line-height: 1.12;
+      letter-spacing: -1.7px;
+      font-weight: 800;
+    }
+
+    .section-head p {
+      max-width: 340px;
+      margin-bottom: 3px;
       color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      text-align: center;
-      text-transform: uppercase;
+      font-size: 13px;
     }
 
-    .section {
-      width: min(1160px, 90%);
-      margin: auto;
-      padding: 95px 0;
-    }
-
-    .section-heading {
-      max-width: 650px;
-      margin: 0 auto 42px;
-      text-align: center;
-    }
-
-    .section-heading h2 {
-      margin: 12px 0;
-      font-size: clamp(33px, 4vw, 46px);
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .product-card {
+    .product {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      background: var(--white);
       border: 1px solid var(--line);
     }
 
-    .product-art {
-      min-height: 370px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--sand);
+    .product-visual {
+      position: relative;
+      min-height: 400px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background: #f0f2f5;
     }
 
-    .product-art .tile-display {
+    .product-visual::after {
+      content: "FEATURED PRODUCT";
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      color: #5c6370;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+
+    .product-visual .tile-panel {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: min(72%, 290px);
       transform: rotate(3deg);
     }
 
     .product-info {
-      padding: clamp(28px, 5vw, 65px);
       align-self: center;
+      padding: clamp(28px, 5vw, 65px);
     }
 
     .product-info h3 {
-      margin: 14px 0;
-      font-size: 37px;
+      margin-bottom: 17px;
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -1.2px;
     }
 
     .product-info p {
       color: var(--muted);
       font-size: 14px;
+      line-height: 1.85;
     }
 
-    .text-link {
+    .tag {
       display: inline-block;
-      margin-top: 18px;
-      padding-bottom: 5px;
-      border-bottom: 1px solid var(--brown);
-      color: var(--brown);
-      font-size: 12px;
+      margin-bottom: 19px;
+      padding: 6px 10px;
+      background: #edf1ff;
+      color: var(--blue);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    .services-section {
-      background: #eee7dc;
-    }
-
-    .services-inner {
-      width: min(1160px, 90%);
-      margin: auto;
-      padding: 90px 0;
-    }
+    .services { background: var(--light); }
 
     .service-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      border-top: 1px solid #dfe2e7;
+      border-bottom: 1px solid #dfe2e7;
     }
 
-    .service-card {
-      padding: 30px;
-      border: 1px solid #dcd1c2;
-      background: rgba(255, 255, 255, 0.45);
+    .service {
+      padding: 28px 25px 32px 0;
+      border-right: 1px solid #dfe2e7;
     }
 
-    .service-number {
-      color: #a08d77;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 25px;
+    .service + .service { padding-left: 25px; }
+
+    .service:last-child { border-right: 0; }
+
+    .service-num {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
     }
 
-    .service-card h3 {
-      margin: 18px 0 10px;
-      font-size: 25px;
+    .service h3 {
+      margin: 25px 0 12px;
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -.5px;
     }
 
-    .service-card p {
+    .service p {
       margin-bottom: 0;
       color: var(--muted);
       font-size: 13px;
+      line-height: 1.85;
     }
+
+    .service-action { margin-top: 30px; }
 
     .cta {
-      padding: 85px 5%;
-      background: var(--brown);
-      color: var(--white);
-      text-align: center;
+      padding: 78px 0;
+      background: var(--ink);
+      color: white;
     }
 
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+    }
+
+    .cta .eyebrow { color: #9eb3ff; }
+
+    .cta .eyebrow::before { background: #9eb3ff; }
+
     .cta h2 {
-      max-width: 680px;
-      margin: 12px auto 18px;
-      font-size: clamp(35px, 4vw, 49px);
+      max-width: 670px;
+      margin-bottom: 12px;
+      font-size: clamp(35px, 4.5vw, 55px);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -2px;
     }
 
     .cta p {
-      max-width: 550px;
-      margin: 0 auto 25px;
-      color: #e2d8cd;
-      font-size: 14px;
+      max-width: 540px;
+      margin-bottom: 0;
+      color: #b7bdc8;
+      font-size: 13px;
     }
 
-    .cta .button {
-      border-color: var(--white);
-      background: var(--white);
-      color: var(--brown);
+    .cta .btn {
+      flex-shrink: 0;
+      color: white;
     }
 
-    .cta .button:hover {
-      background: var(--sand);
-    }
+    footer { padding: 30px 0; }
 
-    footer {
-      padding: 35px 5%;
-      background: #f2ede5;
-    }
-
-    .footer-inner {
-      width: min(1160px, 100%);
-      margin: auto;
+    .footer-top {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
-    }
-
-    .footer-brand {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 20px;
-      letter-spacing: 3px;
+      align-items: center;
+      gap: 25px;
+      padding-bottom: 25px;
     }
 
     .footer-links {
@@ -424,161 +466,176 @@
       flex-wrap: wrap;
       gap: 20px;
       font-size: 11px;
+      font-weight: 600;
     }
 
     .copyright {
-      width: 100%;
-      padding-top: 20px;
+      padding-top: 18px;
       border-top: 1px solid var(--line);
-      color: var(--muted);
+      color: #7b818b;
       font-size: 10px;
     }
 
     @media (max-width: 850px) {
       .nav {
-        padding: 17px 0;
+        padding: 19px 0;
         align-items: flex-start;
       }
 
-      .nav-links {
+      .navlinks {
         justify-content: flex-end;
         flex-wrap: wrap;
-        gap: 12px 16px;
-      }
-
-      .nav-links .button {
-        padding: 9px 12px;
+        gap: 12px 17px;
       }
 
       .hero {
-        min-height: auto;
         grid-template-columns: 1fr;
-        gap: 35px;
-        padding: 55px 0;
-      }
-
-      .hero-art {
-        min-height: 360px;
-      }
-
-      .product-card {
-        grid-template-columns: 1fr;
-      }
-
-      .product-art {
-        min-height: 340px;
-      }
-
-      .service-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .nav {
-        width: 92%;
-        flex-direction: column;
-        gap: 18px;
-      }
-
-      .nav-links {
-        justify-content: flex-start;
-        gap: 12px 18px;
-      }
-
-      .nav-links a {
-        font-size: 11px;
-      }
-
-      .hero {
-        width: 88%;
-      }
-
-      .hero-art {
-        min-height: 310px;
-      }
-
-      .tile-display {
-        width: 205px;
-        padding: 14px;
-      }
-
-      .section,
-      .services-inner {
-        width: 88%;
+        gap: 38px;
         padding: 65px 0;
       }
 
-      .trust-strip {
-        gap: 15px 25px;
-      }
+      .visual { min-height: 380px; }
 
-      .product-art {
-        min-height: 300px;
-      }
-
-      .footer-inner {
+      .section-head {
         align-items: flex-start;
         flex-direction: column;
       }
+
+      .product { grid-template-columns: 1fr; }
+
+      .product-visual { min-height: 340px; }
+
+      .cta-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: 90%; }
+
+      .nav {
+        flex-direction: column;
+        gap: 17px;
+      }
+
+      .navlinks {
+        justify-content: flex-start;
+        gap: 12px 16px;
+      }
+
+      .navlinks a { font-size: 11px; }
+
+      .navlinks .btn {
+        min-height: 38px;
+        padding: 8px 11px;
+      }
+
+      .hero { padding: 48px 0; }
+
+      h1 {
+        font-size: clamp(42px, 12vw, 59px);
+        letter-spacing: -2.5px;
+      }
+
+      .hero-copy { font-size: 14px; }
+
+      .visual { min-height: 315px; padding: 18px; }
+
+      .tile-panel { width: 75%; padding: 12px; }
+
+      .metrics-inner { grid-template-columns: 1fr; }
+
+      .metric,
+      .metric:first-child {
+        padding: 15px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .metric:last-child { border-bottom: 0; }
+
+      .section { padding: 65px 0; }
+
+      .section-head h2 { font-size: 36px; }
+
+      .product-visual { min-height: 300px; }
+
+      .product-info { padding: 28px 23px; }
+
+      .product-info h3 { font-size: 31px; }
+
+      .service-grid { grid-template-columns: 1fr; }
+
+      .service,
+      .service + .service {
+        padding: 25px 0;
+        border-right: 0;
+        border-bottom: 1px solid #dfe2e7;
+      }
+
+      .service:last-child { border-bottom: 0; }
+
+      .service h3 { margin-top: 12px; }
+
+      .cta { padding: 60px 0; }
+
+      .footer-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-links { gap: 14px; }
     }
   </style>
 </head>
 
 <body>
-  <div class="announcement">
-    DISTINCTIVE PRODUCTS · THOUGHTFUL SOURCING
-  </div>
+  <div class="topline"></div>
 
-  <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Sourviaa home">
-        SOURVIAA
-        <small>CURATED WITH CARE</small>
-      </a>
+  <header>
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="logo" href="index.html">SOURVIAA<span>.</span></a>
 
-      <div class="nav-links">
+      <div class="navlinks">
         <a href="index.html">Home</a>
         <a href="products.html">Products</a>
-        <a href="services.html">Sourcing Services</a>
-        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a class="button" href="contact.html">Request a Quote</a>
+        <a class="btn" href="contact.html">Let's Talk ↗</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero wrap">
       <div>
-        <div class="eyebrow">A considered approach to sourcing</div>
+        <div class="eyebrow">Product sourcing & procurement</div>
 
-        <h1>Thoughtful Sourcing.<br>Exceptional Products.</h1>
+        <h1>Find the Right Products.<br><span>Source with Confidence.</span></h1>
 
         <p class="hero-copy">
-          Discover distinctive products and sourcing solutions designed
-          around your needs. From American Mahjong to new product ideas,
-          Sourviaa helps make finding the right products simpler.
+          Product discovery, supplier research, and sourcing support
+          designed around your business needs. From distinctive products
+          to new opportunities, we help you move from idea to next step.
         </p>
 
-        <div class="hero-actions">
-          <a class="button" href="products.html">Explore Products</a>
-          <a class="button button-outline" href="services.html">
-            Our Sourcing Services
-          </a>
+        <div class="actions">
+          <a class="btn" href="products.html">Explore Products ↗</a>
+          <a class="btn btn-outline" href="services.html">Our Services</a>
         </div>
 
         <p class="hero-note">
-          Carefully considered products. A more thoughtful sourcing experience.
+          A clear approach to product discovery and sourcing.
         </p>
       </div>
 
-      <div class="hero-art" role="img" aria-label="Illustrated American Mahjong tiles">
-        <div class="art-circle"></div>
-        <div class="art-circle second"></div>
+      <div class="visual" role="img" aria-label="Stylized Mahjong tile collection">
+        <div class="visual-label">PRODUCT SPOTLIGHT / 001</div>
 
-        <div class="tile-display">
-          <div class="tile-grid" aria-hidden="true">
+        <div class="tile-panel">
+          <div class="tiles" aria-hidden="true">
             <div class="tile">中</div>
             <div class="tile">發</div>
             <div class="tile">北</div>
@@ -591,31 +648,43 @@
           </div>
         </div>
 
-        <div class="art-caption">A CLASSIC, REIMAGINED</div>
+        <div class="visual-bottom">
+          <span>AMERICAN MAHJONG</span>
+          <span>01 / 03</span>
+        </div>
       </div>
     </section>
 
-    <div class="trust-strip">
-      <span>Distinctive Products</span>
-      <span>Thoughtful Sourcing</span>
-      <span>Flexible Solutions</span>
-      <span>Personalized Support</span>
-    </div>
+    <section class="metrics">
+      <div class="metrics-inner wrap">
+        <div class="metric">
+          <strong>PRODUCT DISCOVERY</strong>
+          <span>Explore options that fit your needs.</span>
+        </div>
+        <div class="metric">
+          <strong>SUPPLIER RESEARCH</strong>
+          <span>Compare details before moving forward.</span>
+        </div>
+        <div class="metric">
+          <strong>SOURCING SUPPORT</strong>
+          <span>Coordinate your next steps with clarity.</span>
+        </div>
+      </div>
+    </section>
 
-    <section class="section">
-      <div class="section-heading">
-        <div class="eyebrow">Featured discovery</div>
-        <h2>Products Worth Discovering</h2>
+    <section class="section wrap">
+      <div class="section-head">
+        <h2>Selected Products.<br>New Possibilities.</h2>
         <p>
-          Explore our featured products and connect with us to discuss
-          your product requirements.
+          Explore our featured products or get in touch to discuss
+          a product idea, specification, or sourcing request.
         </p>
       </div>
 
-      <div class="product-card">
-        <div class="product-art" role="img" aria-label="Illustrated Mahjong tile collection">
-          <div class="tile-display">
-            <div class="tile-grid" aria-hidden="true">
+      <div class="product">
+        <div class="product-visual" role="img" aria-label="Stylized American Mahjong tiles">
+          <div class="tile-panel">
+            <div class="tiles" aria-hidden="true">
               <div class="tile">一</div>
               <div class="tile">二</div>
               <div class="tile">三</div>
@@ -630,106 +699,98 @@
         </div>
 
         <div class="product-info">
-          <div class="eyebrow">Featured product</div>
+          <span class="tag">Featured product</span>
           <h3>American Mahjong</h3>
-
           <p>
-            Discover a timeless game with room for personal expression.
-            Explore product options and contact us to discuss availability,
-            specifications, and potential customization.
+            A classic game with distinctive character. Explore product
+            options and contact us to discuss availability, specifications,
+            and potential customization.
           </p>
-
-          <a class="text-link" href="mahjong.html">
-            Explore American Mahjong →
-          </a>
+          <a class="btn btn-dark" href="mahjong.html">View Product ↗</a>
         </div>
       </div>
     </section>
 
-    <section class="services-section">
-      <div class="services-inner">
-        <div class="section-heading">
-          <div class="eyebrow">Beyond the product</div>
-          <h2>Sourcing Made More Thoughtful</h2>
+    <section class="services">
+      <div class="section wrap">
+        <div class="section-head">
+          <h2>From Product Idea<br>to Sourcing Plan.</h2>
           <p>
-            Have a product in mind? We can help you explore sourcing
-            possibilities and clarify the next steps.
+            Practical sourcing support to help you evaluate options
+            and make informed purchasing decisions.
           </p>
         </div>
 
         <div class="service-grid">
-          <article class="service-card">
-            <div class="service-number">01</div>
+          <article class="service">
+            <div class="service-num">01 / DISCOVER</div>
             <h3>Product Discovery</h3>
             <p>
-              Explore product options based on your needs, preferences,
-              specifications, and intended use.
+              Define product needs, specifications, and preferences
+              to identify relevant sourcing possibilities.
             </p>
           </article>
 
-          <article class="service-card">
-            <div class="service-number">02</div>
+          <article class="service">
+            <div class="service-num">02 / RESEARCH</div>
             <h3>Supplier Research</h3>
             <p>
-              Discuss potential suppliers and compare relevant product
+              Explore potential suppliers and review relevant product
               details before deciding how to proceed.
             </p>
           </article>
 
-          <article class="service-card">
-            <div class="service-number">03</div>
+          <article class="service">
+            <div class="service-num">03 / COORDINATE</div>
             <h3>Sourcing Coordination</h3>
             <p>
-              Coordinate product requirements, sample discussions, and
-              purchasing details according to your project.
+              Coordinate product requirements, sample discussions,
+              and purchasing details according to your project.
             </p>
           </article>
         </div>
 
-        <div style="text-align:center; margin-top:35px;">
-          <a class="button button-outline" href="services.html">
-            Discover Our Services
-          </a>
+        <div class="service-action">
+          <a class="btn btn-outline" href="services.html">Explore Sourcing Services ↗</a>
         </div>
       </div>
     </section>
 
     <section class="cta">
-      <div class="eyebrow" style="color:#e2d8cd;">
-        Let's start a conversation
+      <div class="cta-inner wrap">
+        <div>
+          <div class="eyebrow">Start a conversation</div>
+          <h2>Have a Product in Mind?</h2>
+          <p>
+            Tell us what you're looking for. Let's discuss your product
+            requirements and potential sourcing options.
+          </p>
+        </div>
+        <a class="btn" href="contact.html">Discuss Your Project ↗</a>
       </div>
-
-      <h2>Have a Product in Mind?</h2>
-
-      <p>
-        Tell us what you are looking for. We welcome inquiries about
-        featured products, custom requirements, and sourcing opportunities.
-      </p>
-
-      <a class="button" href="contact.html">Request a Quote</a>
     </section>
   </main>
 
   <footer>
-    <div class="footer-inner">
-      <a class="footer-brand" href="index.html">SOURVIAA</a>
-
-      <div class="footer-links">
-        <a href="products.html">Products</a>
-        <a href="services.html">Sourcing Services</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
+    <div class="wrap">
+      <div class="footer-top">
+        <a class="logo" href="index.html">SOURVIAA<span>.</span></a>
+        <div class="footer-links">
+          <a href="products.html">Products</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
       </div>
 
       <div class="copyright">
-        © <span id="current-year">2026</span> Sourviaa. All rights reserved.
+        © <span id="year">2026</span> Sourviaa. All rights reserved.
       </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById("current-year").textContent =
-      new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
