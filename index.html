@@ -587,7 +587,117 @@
 
       .footer-links { gap: 14px; }
     }
-  </style>
+  
+/* Deep navy typography — softer and easier on the eyes */
+:root {
+  --navy: #183451;
+  --navy-soft: #36516b;
+  --muted: #5b6d7e;
+  --page-bg: #f7f7f4;
+}
+
+body {
+  color: var(--navy);
+  background: var(--page-bg);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+h1,
+h2,
+h3,
+.logo,
+.navlinks a,
+.eyebrow,
+.service-num,
+.visual-label,
+.visual-bottom,
+.metric strong {
+  color: var(--navy);
+}
+
+p,
+.hero-copy,
+.section-head p,
+.product-info p,
+.service p,
+.cta p,
+.metric span,
+.copyright {
+  color: var(--navy-soft);
+}
+
+/* Navigation: clearer and easier to scan */
+.navlinks {
+  gap: 22px;
+  font-size: 15px;
+}
+
+.navlinks a {
+  text-decoration: none;
+}
+
+.navlinks a:hover {
+  color: #587b9d;
+}
+
+/* Buttons: deep blue, not bright */
+.btn {
+  background: var(--navy);
+  color: #ffffff;
+  border-color: var(--navy);
+}
+
+.btn:hover {
+  background: #264b70;
+  color: #ffffff;
+}
+
+/* Improve heading readability */
+h1 {
+  line-height: 1.12;
+}
+
+.section-head h2,
+.product-info h3,
+.service h3,
+.cta h2 {
+  line-height: 1.25;
+}
+
+/* Softer surfaces and borders */
+.visual,
+.service,
+.product-info {
+  border-color: #d9e0e6;
+}
+
+.tag {
+  color: var(--navy);
+  background: #e9eef2;
+}
+
+@media (max-width: 560px) {
+  .navlinks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+  }
+
+  .navlinks a:not(.btn) {
+    padding: 9px 10px;
+    background: #eef1f3;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .navlinks .btn {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+}
+</style>
 </head>
 
 <body>
