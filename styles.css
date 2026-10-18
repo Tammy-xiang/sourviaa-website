@@ -435,3 +435,59 @@ textarea::placeholder {
   color: #183451;
 }
 ```
+```css
+/* Services page — consistent Sourviaa navy theme */
+
+.service-grid {
+  background-color: #f7f7f4;
+}
+
+.service-grid article {
+  background-color: #ffffff;
+  border: 1px solid #d9e0e6;
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.service-grid h3 {
+  color: #183451;
+}
+
+.service-grid p {
+  color: #36516b;
+}
+
+.service-number {
+  color: #183451;
+  border-color: #d9e0e6;
+}
+
+.service-note {
+  background-color: #eef1f3;
+  border: 1px solid #d9e0e6;
+}
+
+.service-note h2 {
+  color: #183451;
+}
+
+.service-note p:not(.eyebrow) {
+  color: #36516b;
+}
+
+.service-note .eyebrow,
+.service-grid .eyebrow {
+  color: #526b83;
+}
+
+.service-note .button-dark {
+  background-color: #183451;
+  color: #ffffff;
+  border-color: #183451;
+}
+
+.service-note .button-dark:hover {
+  background-color: #294c6c;
+  color: #ffffff;
+}
+```
