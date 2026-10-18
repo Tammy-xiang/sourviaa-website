@@ -491,3 +491,75 @@ textarea::placeholder {
   color: #ffffff;
 }
 ```
+```css
+/* About Us — consistent Sourviaa navy theme */
+
+/* Intro section */
+.page-hero {
+  background-color: #eef1f3;
+}
+
+.page-hero h1 {
+  color: #183451;
+}
+
+.page-hero > p:not(.eyebrow) {
+  color: #36516b;
+}
+
+/* About layout */
+.about-layout {
+  background-color: #f7f7f4;
+}
+
+.about-layout h2 {
+  color: #183451;
+}
+
+.about-layout p:not(.eyebrow) {
+  color: #36516b;
+}
+
+.about-layout .eyebrow {
+  color: #526b83;
+}
+
+.about-mark {
+  background-color: #183451;
+  color: #ffffff;
+  border-color: #183451;
+}
+
+.about-mark span {
+  color: #cbd7e2;
+}
+
+.about-layout .text-link {
+  color: #183451;
+}
+
+/* Values cards */
+.values-grid {
+  background-color: #eef1f3;
+  gap: 20px;
+}
+
+.values-grid article {
+  background-color: #ffffff;
+  border: 1px solid #d9e0e6;
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.values-grid article > span {
+  color: #526b83;
+}
+
+.values-grid h3 {
+  color: #183451;
+}
+
+.values-grid p {
+  color: #36516b;
+}
+```
