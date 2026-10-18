@@ -233,3 +233,155 @@ form label {
     font-size: 16px;
   }
 }
+```css
+/* SOURVIAA — Apply Navy Theme Across ALL Pages */
+
+/* Main colors */
+:root {
+  --ink: #183451;
+  --muted: #5b6d7e;
+  --paper: #f7f7f4;
+  --white: #ffffff;
+  --line: #d9e0e6;
+  --green: #183451;
+  --lime: #dce4eb;
+}
+
+/* General text and backgrounds */
+body {
+  color: #183451;
+  background: #f7f7f4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #183451;
+}
+
+p, li, label, small {
+  color: #36516b;
+}
+
+/* Header and navigation */
+.site-header {
+  background: rgba(247, 247, 244, 0.98);
+}
+
+.brand,
+.nav a:not(.nav-cta),
+.menu-toggle {
+  color: #183451;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #58718b;
+}
+
+/* Buttons and calls to action */
+.nav-cta,
+.button-dark,
+button,
+input[type="submit"] {
+  background: #183451;
+  color: #ffffff;
+  border-color: #183451;
+}
+
+.nav-cta:hover,
+.button-dark:hover,
+button:hover,
+input[type="submit"]:hover {
+  background: #294c6c;
+  color: #ffffff;
+}
+
+/* Links */
+a,
+.text-link {
+  color: #183451;
+}
+
+a:hover,
+.text-link:hover {
+  color: #58718b;
+}
+
+/* Cards and content panels */
+.art-card,
+.tile,
+.category-card,
+.category-visual,
+.detail-art,
+.custom-card,
+.contact-callout,
+.future-note,
+.form-panel,
+.service-note {
+  background-color: #eef1f3;
+  border-color: #d9e0e6;
+}
+
+/* Light section backgrounds */
+.products-section,
+.detail-options,
+.values-grid,
+.page-hero,
+.trust-strip {
+  background-color: #eef1f3;
+}
+
+/* Dark sections and footer */
+.process-section,
+.closing-cta,
+.footer {
+  background-color: #183451;
+}
+
+.process-section h1,
+.process-section h2,
+.process-section h3,
+.process-section p,
+.process-section li,
+.closing-cta h1,
+.closing-cta h2,
+.closing-cta h3,
+.closing-cta p,
+.footer h1,
+.footer h2,
+.footer h3,
+.footer p,
+.footer li,
+.footer a {
+  color: #ffffff;
+}
+
+/* Forms */
+input,
+select,
+textarea {
+  color: #183451;
+  background: #ffffff;
+  border-color: #d9e0e6;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #718096;
+}
+
+/* Remove old green and lime accents */
+.eyebrow {
+  color: #526b83;
+}
+
+.button-light {
+  color: #183451;
+  border-color: #183451;
+  background: #ffffff;
+}
+
+.button-light:hover {
+  color: #ffffff;
+  background: #183451;
+}
+```
