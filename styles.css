@@ -73,3 +73,163 @@ select {
 footer {
   color: var(--brand-blue-gray);
 }
+/* SOURVIAA — Final Navy Theme Refinement */
+
+/* Replace the old green brand colors */
+:root {
+  --ink: #183451;
+  --muted: #5b6d7e;
+  --paper: #f7f7f4;
+  --white: #ffffff;
+  --line: #d9e0e6;
+  --green: #183451;
+  --lime: #dce4eb;
+}
+
+/* Improve readability */
+body {
+  color: #183451;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* Navigation */
+.site-header {
+  background: rgba(247, 247, 244, 0.97);
+}
+
+.brand {
+  color: #183451;
+  font-size: 22px;
+}
+
+.brand span {
+  color: #58718b;
+}
+
+.nav {
+  font-size: 14px;
+  gap: 25px;
+}
+
+.nav > a:not(.nav-cta) {
+  color: #36516b;
+}
+
+.nav > a.active,
+.nav > a:hover {
+  color: #183451;
+}
+
+.nav-cta,
+.button-dark {
+  background: #183451;
+  color: #ffffff;
+}
+
+.nav-cta:hover,
+.button-dark:hover {
+  background: #294c6c;
+  color: #ffffff;
+}
+
+/* Main headings and body text */
+.hero h1,
+.page-hero h1,
+.detail-copy h1,
+.section h2,
+.process-section h2,
+.closing-cta h2 {
+  color: #183451;
+}
+
+.hero-text,
+.page-hero > p:last-child,
+.detail-copy > p:not(.eyebrow),
+.intro-copy > p:not(.large-copy),
+.category-info > p:not(.eyebrow),
+.service-grid p,
+.values-grid p,
+.contact-aside > p:not(.eyebrow) {
+  color: #36516b;
+}
+
+/* Softer blue-gray decorative surfaces */
+.products-section,
+.detail-options,
+.values-grid,
+.service-note,
+.page-hero {
+  background-color: #eef1f3;
+}
+
+.category-visual,
+.detail-art,
+.custom-card,
+.contact-callout,
+.future-note {
+  background-color: #e8edf1;
+}
+
+.art-card {
+  background-color: #edf0f2;
+}
+
+.process-section,
+.footer {
+  background-color: #183451;
+}
+
+/* Form readability */
+input,
+select,
+textarea {
+  color: #183451;
+  background-color: #ffffff;
+  border-color: #d9e0e6;
+  font-size: 15px;
+}
+
+form label {
+  color: #183451;
+  font-size: 13px;
+}
+
+/* Small labels should remain readable */
+.eyebrow {
+  color: #526b83;
+  font-size: 11px;
+}
+
+.text-link {
+  color: #183451;
+  font-size: 14px;
+}
+
+.footer-links {
+  font-size: 13px;
+}
+
+@media (max-width: 850px) {
+  .nav {
+    font-size: 15px;
+  }
+
+  .nav > a:not(.nav-cta) {
+    padding: 5px 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand {
+    font-size: 20px;
+  }
+
+  .nav {
+    gap: 15px;
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
+}
