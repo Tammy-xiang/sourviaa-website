@@ -563,3 +563,112 @@ textarea::placeholder {
   color: #36516b;
 }
 ```
+```css
+/* SOURVIAA — Typography & Navigation Fix */
+
+/* Consistent, readable typography */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #183451;
+}
+
+p,
+li,
+input,
+select,
+textarea {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Make headings consistent and reduce excessive italics */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  color: #183451;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(34px, 4vw, 52px);
+}
+
+h2 {
+  font-size: clamp(27px, 3vw, 38px);
+}
+
+h3 {
+  font-size: 21px;
+}
+
+/* Keep italic emphasis subtle */
+h1 em,
+h2 em,
+h3 em {
+  font-style: normal;
+}
+
+/* Improve readability of small labels and navigation */
+.eyebrow,
+form label,
+.footer-links,
+.nav {
+  font-size: 14px;
+}
+
+.brand {
+  font-size: 22px;
+}
+
+/* Fix the dark-blue navigation CTA in every state */
+.site-header .nav a.nav-cta,
+.site-header .nav a.nav-cta:link,
+.site-header .nav a.nav-cta:visited,
+.site-header .nav a.nav-cta:hover,
+.site-header .nav a.nav-cta:focus,
+.site-header .nav a.nav-cta:active {
+  background-color: #183451;
+  color: #ffffff;
+  border-color: #183451;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.site-header .nav a.nav-cta:hover,
+.site-header .nav a.nav-cta:focus {
+  background-color: #294c6c;
+  color: #ffffff;
+}
+
+.site-header .nav a.nav-cta span {
+  color: #ffffff;
+}
+
+/* Make normal text links readable */
+.text-link,
+.footer a {
+  font-size: 15px;
+}
+
+/* Keep mobile text comfortable */
+@media (max-width: 520px) {
+  body {
+    font-size: 16px;
+  }
+
+  .nav {
+    font-size: 15px;
+  }
+
+  .brand {
+    font-size: 20px;
+  }
+}
+```
