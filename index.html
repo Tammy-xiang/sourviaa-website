@@ -1,20 +1,735 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sourviaa helps businesses and buyers explore products and navigate sourcing needs, from American Mahjong to custom product requests.">
-  <title>Sourviaa | Discover Products. Simplify Sourcing.</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sourviaa | Thoughtful Sourcing. Exceptional Products.</title>
+
+  <meta name="description" content="Discover distinctive products and reliable sourcing solutions with Sourviaa. Explore American Mahjong and tailored product sourcing services.">
+
+  <meta name="theme-color" content="#f8f5ef">
+
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    :root {
+      --cream: #f8f5ef;
+      --sand: #e9dfd0;
+      --brown: #514236;
+      --dark: #29251f;
+      --muted: #777067;
+      --white: #ffffff;
+      --line: #e7e0d6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--dark);
+      background: var(--cream);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .announcement {
+      padding: 9px 20px;
+      background: var(--brown);
+      color: var(--white);
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(248, 245, 239, 0.96);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      width: min(1160px, 90%);
+      min-height: 82px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      font-weight: bold;
+      letter-spacing: 4px;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: -7px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 8px;
+      font-weight: normal;
+      letter-spacing: 3px;
+      text-align: center;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 12px;
+    }
+
+    .nav-links a:hover {
+      color: var(--muted);
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border: 1px solid var(--brown);
+      background: var(--brown);
+      color: var(--white);
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-align: center;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--dark);
+      border-color: var(--dark);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--brown);
+    }
+
+    .button-outline:hover {
+      color: var(--white);
+    }
+
+    .hero {
+      width: min(1160px, 90%);
+      min-height: 570px;
+      margin: auto;
+      padding: 65px 0;
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+      line-height: 1.2;
+    }
+
+    h1 {
+      max-width: 600px;
+      margin: 20px 0;
+      font-size: clamp(43px, 5vw, 67px);
+      letter-spacing: -1.8px;
+    }
+
+    .hero-copy {
+      max-width: 470px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hero-note {
+      margin-top: 30px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 420px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse at 70% 25%, #fdfbf7 0%, transparent 40%),
+        linear-gradient(145deg, #e9dfd0, #d8c6b0);
+    }
+
+    .art-circle {
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border: 1px solid rgba(81, 66, 54, 0.25);
+      border-radius: 50%;
+    }
+
+    .art-circle.second {
+      width: 350px;
+      height: 350px;
+    }
+
+    .tile-display {
+      position: relative;
+      z-index: 1;
+      width: 245px;
+      padding: 20px;
+      background: #fdfbf7;
+      border: 1px solid #d8cbb9;
+      box-shadow: 0 25px 55px rgba(67, 48, 32, 0.13);
+      transform: rotate(-5deg);
+    }
+
+    .tile-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+    }
+
+    .tile {
+      aspect-ratio: 0.78;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #d8cbb9;
+      background: #fffefa;
+      color: #66785b;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+    }
+
+    .tile:nth-child(2),
+    .tile:nth-child(6) {
+      color: #a74e43;
+    }
+
+    .tile:nth-child(3),
+    .tile:nth-child(7) {
+      color: #536d8a;
+    }
+
+    .art-caption {
+      position: absolute;
+      right: 22px;
+      bottom: 18px;
+      color: #66584a;
+      font-size: 9px;
+      letter-spacing: 2px;
+    }
+
+    .trust-strip {
+      padding: 23px 5%;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px 65px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .section {
+      width: min(1160px, 90%);
+      margin: auto;
+      padding: 95px 0;
+    }
+
+    .section-heading {
+      max-width: 650px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 12px 0;
+      font-size: clamp(33px, 4vw, 46px);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .product-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .product-art {
+      min-height: 370px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--sand);
+    }
+
+    .product-art .tile-display {
+      transform: rotate(3deg);
+    }
+
+    .product-info {
+      padding: clamp(28px, 5vw, 65px);
+      align-self: center;
+    }
+
+    .product-info h3 {
+      margin: 14px 0;
+      font-size: 37px;
+    }
+
+    .product-info p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .text-link {
+      display: inline-block;
+      margin-top: 18px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--brown);
+      color: var(--brown);
+      font-size: 12px;
+    }
+
+    .services-section {
+      background: #eee7dc;
+    }
+
+    .services-inner {
+      width: min(1160px, 90%);
+      margin: auto;
+      padding: 90px 0;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      padding: 30px;
+      border: 1px solid #dcd1c2;
+      background: rgba(255, 255, 255, 0.45);
+    }
+
+    .service-number {
+      color: #a08d77;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+    }
+
+    .service-card h3 {
+      margin: 18px 0 10px;
+      font-size: 25px;
+    }
+
+    .service-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .cta {
+      padding: 85px 5%;
+      background: var(--brown);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta h2 {
+      max-width: 680px;
+      margin: 12px auto 18px;
+      font-size: clamp(35px, 4vw, 49px);
+    }
+
+    .cta p {
+      max-width: 550px;
+      margin: 0 auto 25px;
+      color: #e2d8cd;
+      font-size: 14px;
+    }
+
+    .cta .button {
+      border-color: var(--white);
+      background: var(--white);
+      color: var(--brown);
+    }
+
+    .cta .button:hover {
+      background: var(--sand);
+    }
+
+    footer {
+      padding: 35px 5%;
+      background: #f2ede5;
+    }
+
+    .footer-inner {
+      width: min(1160px, 100%);
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      letter-spacing: 3px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 11px;
+    }
+
+    .copyright {
+      width: 100%;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    @media (max-width: 850px) {
+      .nav {
+        padding: 17px 0;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 12px 16px;
+      }
+
+      .nav-links .button {
+        padding: 9px 12px;
+      }
+
+      .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 55px 0;
+      }
+
+      .hero-art {
+        min-height: 360px;
+      }
+
+      .product-card {
+        grid-template-columns: 1fr;
+      }
+
+      .product-art {
+        min-height: 340px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav {
+        width: 92%;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        gap: 12px 18px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .hero {
+        width: 88%;
+      }
+
+      .hero-art {
+        min-height: 310px;
+      }
+
+      .tile-display {
+        width: 205px;
+        padding: 14px;
+      }
+
+      .section,
+      .services-inner {
+        width: 88%;
+        padding: 65px 0;
+      }
+
+      .trust-strip {
+        gap: 15px 25px;
+      }
+
+      .product-art {
+        min-height: 300px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header class="site-header"><a class="brand" href="index.html" aria-label="Sourviaa home">SOURVIAA<span>.</span></a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button><nav class="nav"><a class="active" href="index.html">Home</a><a href="products.html">Products</a><a href="services.html">Sourcing Services</a><a href="about.html">About Us</a><a href="contact.html">Contact</a><a class="nav-cta" href="contact.html#inquiry">Request a Quote <span>↗</span></a></nav></header>
-<main>
-<section class="hero"><div class="hero-copy"><p class="eyebrow">PRODUCT DISCOVERY · SOURCING SUPPORT</p><h1>Discover products.<br><em>Simplify sourcing.</em></h1><p class="hero-text">From thoughtfully selected products to tailored sourcing requests, Sourviaa helps turn product ideas into clear next steps.</p><div class="button-row"><a class="button button-dark" href="products.html">Explore Products <span>↗</span></a><a class="text-link" href="contact.html#inquiry">Tell us what you need <span>→</span></a></div><div class="hero-note"><span class="dot"></span> A flexible sourcing partner for your next product idea</div></div><div class="hero-art"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-card"><div class="art-label">FEATURED CATEGORY <span>01 / 01</span></div><div class="tile-scene"><div class="tile tile-a"><b>中</b></div><div class="tile tile-b"><b>發</b></div><div class="tile tile-c"><b>七</b></div><div class="tile tile-d"><b>東</b></div><div class="tile tile-e"><b>🀄</b></div></div><div class="art-bottom"><div><p class="mini-label">NOW EXPLORING</p><h3>American Mahjong</h3></div><a href="mahjong.html" aria-label="Explore American Mahjong">↗</a></div></div><p class="art-caption">A first category. A broader world of possibilities.</p></div></section>
-<section class="trust-strip"><span>PRODUCT SOURCING</span><i>✳</i><span>SUPPLIER RESEARCH</span><i>✳</i><span>PROCUREMENT SUPPORT</span><i>✳</i><span>MADE AROUND YOUR NEEDS</span></section>
-<section class="section intro-grid"><div><p class="eyebrow">WHAT WE DO</p><h2>Good sourcing starts<br>with <em>the right questions.</em></h2></div><div class="intro-copy"><p class="large-copy">Whether you have a product in mind or are still exploring options, we help you move from an initial idea toward a more informed sourcing conversation.</p><p>We showcase selected product categories and welcome custom requests beyond the products currently featured on our site.</p><a class="text-link" href="services.html">Explore our approach <span>→</span></a></div></section>
-<section class="section products-section"><div class="section-heading"><div><p class="eyebrow">EXPLORE PRODUCTS</p><h2>A growing range.<br><em>One clear starting point.</em></h2></div><a class="text-link" href="products.html">View all products <span>→</span></a></div><a class="category-card" href="mahjong.html"><div class="category-visual"><div class="mahjong-stack"><span>中</span><span>發</span><span>七</span></div><div class="round-stamp">FEATURED<br>CATEGORY</div></div><div class="category-info"><p class="eyebrow">CATEGORY 01</p><h3>American Mahjong</h3><p>Explore product possibilities, styles and sourcing options for American Mahjong.</p><span class="circle-arrow">↗</span></div></a><div class="future-note"><span>✳</span><div><strong>Looking for something else?</strong><p>Tell us what you need. We welcome sourcing inquiries for products beyond our current featured range.</p></div><a href="contact.html#inquiry">Make a request →</a></div></section>
-<section class="process-section"><div class="section process-inner"><div class="process-intro"><p class="eyebrow">HOW IT WORKS</p><h2>From idea<br>to <em>next steps.</em></h2><p>Every request is different. We start by understanding what matters to you.</p><a class="button button-light" href="contact.html#inquiry">Start a conversation <span>↗</span></a></div><div class="steps"><article><span>01</span><div><h3>Share your requirements</h3><p>Tell us what product you are looking for, along with your goals and key specifications.</p></div></article><article><span>02</span><div><h3>Explore sourcing options</h3><p>We review the request and explore relevant product or supplier possibilities within the agreed scope.</p></div></article><article><span>03</span><div><h3>Coordinate the details</h3><p>Discuss specifications, quantities, pricing and practical next steps.</p></div></article><article><span>04</span><div><h3>Move forward with clarity</h3><p>Align on the scope of support and the next actions before proceeding.</p></div></article></div></div></section>
-<section class="section closing-cta"><p class="eyebrow">HAVE A PRODUCT IN MIND?</p><h2>Let's start with <em>what you need.</em></h2><p>Share a product idea, a reference image or a sourcing challenge. We'll take it from there.</p><a class="button button-dark" href="contact.html#inquiry">Request a Quote <span>↗</span></a></section>
-</main>
-<footer class="footer"><div class="footer-top"><a class="brand brand-light" href="index.html">SOURVIAA<span>.</span></a><p>Product discovery and sourcing support,<br>built around your needs.</p><div class="footer-links"><a href="products.html">Products</a><a href="services.html">Sourcing Services</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> Sourviaa. All rights reserved.</span><span>Product sourcing · Procurement support</span></div></footer>
-<script src="script.js"></script></body></html>
+  <div class="announcement">
+    DISTINCTIVE PRODUCTS · THOUGHTFUL SOURCING
+  </div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Sourviaa home">
+        SOURVIAA
+        <small>CURATED WITH CARE</small>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Sourcing Services</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a class="button" href="contact.html">Request a Quote</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">A considered approach to sourcing</div>
+
+        <h1>Thoughtful Sourcing.<br>Exceptional Products.</h1>
+
+        <p class="hero-copy">
+          Discover distinctive products and sourcing solutions designed
+          around your needs. From American Mahjong to new product ideas,
+          Sourviaa helps make finding the right products simpler.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button" href="products.html">Explore Products</a>
+          <a class="button button-outline" href="services.html">
+            Our Sourcing Services
+          </a>
+        </div>
+
+        <p class="hero-note">
+          Carefully considered products. A more thoughtful sourcing experience.
+        </p>
+      </div>
+
+      <div class="hero-art" role="img" aria-label="Illustrated American Mahjong tiles">
+        <div class="art-circle"></div>
+        <div class="art-circle second"></div>
+
+        <div class="tile-display">
+          <div class="tile-grid" aria-hidden="true">
+            <div class="tile">中</div>
+            <div class="tile">發</div>
+            <div class="tile">北</div>
+            <div class="tile">萬</div>
+            <div class="tile">春</div>
+            <div class="tile">梅</div>
+            <div class="tile">東</div>
+            <div class="tile">南</div>
+            <div class="tile">西</div>
+          </div>
+        </div>
+
+        <div class="art-caption">A CLASSIC, REIMAGINED</div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <span>Distinctive Products</span>
+      <span>Thoughtful Sourcing</span>
+      <span>Flexible Solutions</span>
+      <span>Personalized Support</span>
+    </div>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="eyebrow">Featured discovery</div>
+        <h2>Products Worth Discovering</h2>
+        <p>
+          Explore our featured products and connect with us to discuss
+          your product requirements.
+        </p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-art" role="img" aria-label="Illustrated Mahjong tile collection">
+          <div class="tile-display">
+            <div class="tile-grid" aria-hidden="true">
+              <div class="tile">一</div>
+              <div class="tile">二</div>
+              <div class="tile">三</div>
+              <div class="tile">春</div>
+              <div class="tile">花</div>
+              <div class="tile">鳥</div>
+              <div class="tile">東</div>
+              <div class="tile">南</div>
+              <div class="tile">西</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-info">
+          <div class="eyebrow">Featured product</div>
+          <h3>American Mahjong</h3>
+
+          <p>
+            Discover a timeless game with room for personal expression.
+            Explore product options and contact us to discuss availability,
+            specifications, and potential customization.
+          </p>
+
+          <a class="text-link" href="mahjong.html">
+            Explore American Mahjong →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section">
+      <div class="services-inner">
+        <div class="section-heading">
+          <div class="eyebrow">Beyond the product</div>
+          <h2>Sourcing Made More Thoughtful</h2>
+          <p>
+            Have a product in mind? We can help you explore sourcing
+            possibilities and clarify the next steps.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-number">01</div>
+            <h3>Product Discovery</h3>
+            <p>
+              Explore product options based on your needs, preferences,
+              specifications, and intended use.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">02</div>
+            <h3>Supplier Research</h3>
+            <p>
+              Discuss potential suppliers and compare relevant product
+              details before deciding how to proceed.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">03</div>
+            <h3>Sourcing Coordination</h3>
+            <p>
+              Coordinate product requirements, sample discussions, and
+              purchasing details according to your project.
+            </p>
+          </article>
+        </div>
+
+        <div style="text-align:center; margin-top:35px;">
+          <a class="button button-outline" href="services.html">
+            Discover Our Services
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="eyebrow" style="color:#e2d8cd;">
+        Let's start a conversation
+      </div>
+
+      <h2>Have a Product in Mind?</h2>
+
+      <p>
+        Tell us what you are looking for. We welcome inquiries about
+        featured products, custom requirements, and sourcing opportunities.
+      </p>
+
+      <a class="button" href="contact.html">Request a Quote</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a class="footer-brand" href="index.html">SOURVIAA</a>
+
+      <div class="footer-links">
+        <a href="products.html">Products</a>
+        <a href="services.html">Sourcing Services</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="copyright">
+        © <span id="current-year">2026</span> Sourviaa. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
