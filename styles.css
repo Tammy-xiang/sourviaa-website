@@ -385,3 +385,53 @@ textarea::placeholder {
   background: #183451;
 }
 ```
+```css
+/* Products page — consistent Sourviaa navy theme */
+
+.page-hero,
+.simple-banner {
+  background-color: #f0f2f4;
+}
+
+.page-hero h1,
+.simple-banner h2,
+.category-info h3,
+.custom-card h3 {
+  color: #183451;
+}
+
+.page-hero p:not(.eyebrow),
+.category-info p:not(.eyebrow),
+.custom-card p:not(.eyebrow) {
+  color: #36516b;
+}
+
+.category-card,
+.custom-card {
+  background-color: #ffffff;
+  border: 1px solid #d9e0e6;
+}
+
+.category-visual {
+  background-color: #e8edf1;
+}
+
+.mahjong-stack span {
+  color: #183451;
+  border-color: #d9e0e6;
+}
+
+.round-stamp {
+  color: #183451;
+  border-color: #183451;
+}
+
+.circle-arrow {
+  color: #183451;
+  border-color: #d9e0e6;
+}
+
+.simple-banner .text-link {
+  color: #183451;
+}
+```
