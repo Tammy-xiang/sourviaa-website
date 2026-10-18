@@ -672,3 +672,32 @@ form label,
   }
 }
 ```
+```css
+/* Fix homepage closing CTA text contrast */
+
+.closing-cta h1,
+.closing-cta h2,
+.closing-cta h3,
+.closing-cta p,
+.closing-cta .eyebrow,
+.closing-cta a:not(.button),
+.closing-cta .text-link {
+  color: #ffffff;
+}
+
+.closing-cta em {
+  color: #ffffff;
+  font-style: normal;
+}
+
+.closing-cta .button-light {
+  background-color: #ffffff;
+  color: #183451;
+  border-color: #ffffff;
+}
+
+.closing-cta .button-light:hover {
+  background-color: #e8edf1;
+  color: #183451;
+}
+```
