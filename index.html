@@ -1,717 +1,106 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Sourviaa helps businesses discover products, research suppliers, and coordinate sourcing projects.">
+  <meta name="theme-color" content="#183451">
+  <meta name="description" content="Sourviaa helps businesses explore products, research suppliers, and coordinate sourcing projects.">
   <title>Sourviaa | Product Sourcing & Procurement</title>
-
   <style>
-    :root {
-      --blue: #315efb;
-      --ink: #111318;
-      --muted: #646b76;
-      --line: #e5e7eb;
-      --light: #f5f6f8;
-      --white: #fff;
-      --width: 1180px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .wrap {
-      width: min(var(--width), 90%);
-      margin: 0 auto;
-    }
-
-    .topline {
-      height: 5px;
-      background: var(--blue);
-    }
-
-    header {
-      background: #fff;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      min-height: 82px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-      letter-spacing: 3px;
-      white-space: nowrap;
-    }
-
-    .logo span { color: var(--blue); }
-
-    .navlinks {
-      display: flex;
-      align-items: center;
-      gap: 27px;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .navlinks a:not(.btn):hover { color: var(--blue); }
-
-    .btn {
-      display: inline-flex;
-      min-height: 47px;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 12px 19px;
-      background: var(--blue);
-      border: 1px solid var(--blue);
-      color: #fff;
-      font-size: 12px;
-      font-weight: 700;
-      transition: background .2s, transform .2s;
-    }
-
-    .btn:hover {
-      background: #2048d8;
-      transform: translateY(-1px);
-    }
-
-    .btn-dark {
-      background: var(--ink);
-      border-color: var(--ink);
-    }
-
-    .btn-dark:hover { background: #333740; }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--ink);
-      border-color: #cfd3da;
-    }
-
-    .btn-outline:hover {
-      background: var(--light);
-      color: var(--ink);
-    }
-
-    .hero {
-      padding: 94px 0 82px;
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 23px;
-      color: var(--blue);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 25px;
-      height: 2px;
-      background: var(--blue);
-    }
-
-    h1, h2, h3, p { margin-top: 0; }
-
-    h1 {
-      max-width: 700px;
-      margin-bottom: 24px;
-      font-size: clamp(43px, 5.8vw, 74px);
-      line-height: 1.04;
-      letter-spacing: -3.8px;
-      font-weight: 800;
-    }
-
-    h1 span { color: var(--blue); }
-
-    .hero-copy {
-      max-width: 510px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.85;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 31px;
-    }
-
-    .hero-note {
-      margin-top: 25px;
-      margin-bottom: 0;
-      color: #7b818b;
-      font-size: 11px;
-    }
-
-    .visual {
-      position: relative;
-      min-height: 430px;
-      padding: 25px;
-      overflow: hidden;
-      background: #f0f2f5;
-    }
-
-    .visual::before {
-      content: "";
-      position: absolute;
-      top: -85px;
-      right: -85px;
-      width: 290px;
-      height: 290px;
-      border: 55px solid rgba(49, 94, 251, .09);
-      border-radius: 50%;
-    }
-
-    .visual-label {
-      position: relative;
-      z-index: 1;
-      color: #656c78;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.7px;
-    }
-
-    .tile-panel {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: min(77%, 330px);
-      padding: 17px;
-      background: white;
-      border: 1px solid #dfe2e7;
-      box-shadow: 0 25px 65px rgba(17, 19, 24, .12);
-      transform: translate(-50%, -48%) rotate(-4deg);
-    }
-
-    .tiles {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 9px;
-    }
-
-    .tile {
-      display: grid;
-      aspect-ratio: .78;
-      place-items: center;
-      background: #fafafa;
-      border: 1px solid #e0e2e5;
-      color: #315efb;
-      font-family: Georgia, serif;
-      font-size: clamp(22px, 3vw, 33px);
-    }
-
-    .tile:nth-child(2),
-    .tile:nth-child(6) { color: #d14949; }
-
-    .tile:nth-child(3),
-    .tile:nth-child(8) { color: #25865b; }
-
-    .visual-bottom {
-      position: absolute;
-      right: 24px;
-      bottom: 20px;
-      left: 24px;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      color: #606774;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .metrics {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .metrics-inner {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .metric {
-      padding: 23px 25px;
-      border-right: 1px solid var(--line);
-    }
-
-    .metric:first-child { padding-left: 0; }
-
-    .metric:last-child { border-right: 0; }
-
-    .metric strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 12px;
-    }
-
-    .metric span {
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .section { padding: 95px 0; }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 36px;
-    }
-
-    .section-head h2 {
-      max-width: 600px;
-      margin-bottom: 0;
-      font-size: clamp(34px, 4vw, 48px);
-      line-height: 1.12;
-      letter-spacing: -1.7px;
-      font-weight: 800;
-    }
-
-    .section-head p {
-      max-width: 340px;
-      margin-bottom: 3px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .product {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border: 1px solid var(--line);
-    }
-
-    .product-visual {
-      position: relative;
-      min-height: 400px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      background: #f0f2f5;
-    }
-
-    .product-visual::after {
-      content: "FEATURED PRODUCT";
-      position: absolute;
-      top: 22px;
-      left: 22px;
-      color: #5c6370;
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-    }
-
-    .product-visual .tile-panel {
-      position: relative;
-      top: auto;
-      left: auto;
-      width: min(72%, 290px);
-      transform: rotate(3deg);
-    }
-
-    .product-info {
-      align-self: center;
-      padding: clamp(28px, 5vw, 65px);
-    }
-
-    .product-info h3 {
-      margin-bottom: 17px;
-      font-size: 36px;
-      font-weight: 800;
-      letter-spacing: -1.2px;
-    }
-
-    .product-info p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.85;
-    }
-
-    .tag {
-      display: inline-block;
-      margin-bottom: 19px;
-      padding: 6px 10px;
-      background: #edf1ff;
-      color: var(--blue);
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .services { background: var(--light); }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid #dfe2e7;
-      border-bottom: 1px solid #dfe2e7;
-    }
-
-    .service {
-      padding: 28px 25px 32px 0;
-      border-right: 1px solid #dfe2e7;
-    }
-
-    .service + .service { padding-left: 25px; }
-
-    .service:last-child { border-right: 0; }
-
-    .service-num {
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .service h3 {
-      margin: 25px 0 12px;
-      font-size: 23px;
-      font-weight: 800;
-      letter-spacing: -.5px;
-    }
-
-    .service p {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.85;
-    }
-
-    .service-action { margin-top: 30px; }
-
-    .cta {
-      padding: 78px 0;
-      background: var(--ink);
-      color: white;
-    }
-
-    .cta-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 35px;
-    }
-
-    .cta .eyebrow { color: #9eb3ff; }
-
-    .cta .eyebrow::before { background: #9eb3ff; }
-
-    .cta h2 {
-      max-width: 670px;
-      margin-bottom: 12px;
-      font-size: clamp(35px, 4.5vw, 55px);
-      line-height: 1.1;
-      font-weight: 800;
-      letter-spacing: -2px;
-    }
-
-    .cta p {
-      max-width: 540px;
-      margin-bottom: 0;
-      color: #b7bdc8;
-      font-size: 13px;
-    }
-
-    .cta .btn {
-      flex-shrink: 0;
-      color: white;
-    }
-
-    footer { padding: 30px 0; }
-
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-      padding-bottom: 25px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      font-size: 11px;
-      font-weight: 600;
-    }
-
-    .copyright {
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      color: #7b818b;
-      font-size: 10px;
-    }
-
-    @media (max-width: 850px) {
-      .nav {
-        padding: 19px 0;
-        align-items: flex-start;
-      }
-
-      .navlinks {
-        justify-content: flex-end;
-        flex-wrap: wrap;
-        gap: 12px 17px;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 38px;
-        padding: 65px 0;
-      }
-
-      .visual { min-height: 380px; }
-
-      .section-head {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .product { grid-template-columns: 1fr; }
-
-      .product-visual { min-height: 340px; }
-
-      .cta-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .wrap { width: 90%; }
-
-      .nav {
-        flex-direction: column;
-        gap: 17px;
-      }
-
-      .navlinks {
-        justify-content: flex-start;
-        gap: 12px 16px;
-      }
-
-      .navlinks a { font-size: 11px; }
-
-      .navlinks .btn {
-        min-height: 38px;
-        padding: 8px 11px;
-      }
-
-      .hero { padding: 48px 0; }
-
-      h1 {
-        font-size: clamp(42px, 12vw, 59px);
-        letter-spacing: -2.5px;
-      }
-
-      .hero-copy { font-size: 14px; }
-
-      .visual { min-height: 315px; padding: 18px; }
-
-      .tile-panel { width: 75%; padding: 12px; }
-
-      .metrics-inner { grid-template-columns: 1fr; }
-
-      .metric,
-      .metric:first-child {
-        padding: 15px 0;
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .metric:last-child { border-bottom: 0; }
-
-      .section { padding: 65px 0; }
-
-      .section-head h2 { font-size: 36px; }
-
-      .product-visual { min-height: 300px; }
-
-      .product-info { padding: 28px 23px; }
-
-      .product-info h3 { font-size: 31px; }
-
-      .service-grid { grid-template-columns: 1fr; }
-
-      .service,
-      .service + .service {
-        padding: 25px 0;
-        border-right: 0;
-        border-bottom: 1px solid #dfe2e7;
-      }
-
-      .service:last-child { border-bottom: 0; }
-
-      .service h3 { margin-top: 12px; }
-
-      .cta { padding: 60px 0; }
-
-      .footer-top {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .footer-links { gap: 14px; }
-    }
-  
-/* Deep navy typography — softer and easier on the eyes */
-:root {
-  --navy: #183451;
-  --navy-soft: #36516b;
-  --muted: #5b6d7e;
-  --page-bg: #f7f7f4;
-}
-
-body {
-  color: var(--navy);
-  background: var(--page-bg);
-  font-size: 17px;
-  line-height: 1.75;
-}
-
-h1,
-h2,
-h3,
-.logo,
-.navlinks a,
-.eyebrow,
-.service-num,
-.visual-label,
-.visual-bottom,
-.metric strong {
-  color: var(--navy);
-}
-
-p,
-.hero-copy,
-.section-head p,
-.product-info p,
-.service p,
-.cta p,
-.metric span,
-.copyright {
-  color: var(--navy-soft);
-}
-
-/* Navigation: clearer and easier to scan */
-.navlinks {
-  gap: 22px;
-  font-size: 15px;
-}
-
-.navlinks a {
-  text-decoration: none;
-}
-
-.navlinks a:hover {
-  color: #587b9d;
-}
-
-/* Buttons: deep blue, not bright */
-.btn {
-  background: var(--navy);
-  color: #ffffff;
-  border-color: var(--navy);
-}
-
-.btn:hover {
-  background: #264b70;
-  color: #ffffff;
-}
-
-/* Improve heading readability */
-h1 {
-  line-height: 1.12;
-}
-
-.section-head h2,
-.product-info h3,
-.service h3,
-.cta h2 {
-  line-height: 1.25;
-}
-
-/* Softer surfaces and borders */
-.visual,
-.service,
-.product-info {
-  border-color: #d9e0e6;
-}
-
-.tag {
-  color: var(--navy);
-  background: #e9eef2;
-}
-
-@media (max-width: 560px) {
-  .navlinks {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-    width: 100%;
-  }
-
-  .navlinks a:not(.btn) {
-    padding: 9px 10px;
-    background: #eef1f3;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-
-  .navlinks .btn {
-    grid-column: 1 / -1;
-    text-align: center;
-  }
-}
-</style>
+    :root{--navy:#183451;--bluegray:#36516b;--muted:#5b6d7e;--line:#d9e0e6;--paper:#f7f7f4;--pale:#eef1f3;--white:#fff;--width:1180px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--navy);background:var(--white);font:16px/1.7 Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    .wrap{width:min(var(--width),90%);margin:0 auto}
+    .topline{height:5px;background:var(--navy)}
+    header{background:#fff;border-bottom:1px solid var(--line)}
+    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo{font-size:23px;font-weight:800;letter-spacing:2px;white-space:nowrap}
+    .logo span{color:#587b9d}
+    .navlinks{display:flex;align-items:center;gap:23px;font-size:14px;font-weight:700}
+    .navlinks a:not(.btn):hover{color:#587b9d}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:45px;padding:11px 18px;background:var(--navy);border:1px solid var(--navy);color:#fff!important;font-size:14px;font-weight:700;border-radius:4px;transition:background .2s}
+    .btn:hover{background:#294c6c;color:#fff}
+    .btn-outline{background:transparent;color:var(--navy)!important;border-color:#aebdca}
+    .btn-outline:hover{background:var(--pale);color:var(--navy)!important}
+    .eyebrow{display:flex;align-items:center;gap:9px;margin:0 0 15px;color:#526b83;font-size:12px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase}
+    .eyebrow:before{content:"";width:23px;height:2px;background:#526b83}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{font-family:Arial,Helvetica,sans-serif;color:var(--navy);font-style:normal;line-height:1.2}
+    h1{margin-bottom:20px;font-size:clamp(36px,4.8vw,59px);letter-spacing:-1.8px}
+    h2{margin-bottom:12px;font-size:clamp(28px,3.3vw,40px);letter-spacing:-.8px}
+    h3{margin-bottom:8px;font-size:20px}
+    .muted{color:var(--bluegray)}
+    .hero{padding:66px 0;display:grid;grid-template-columns:1fr 1.05fr;gap:42px;align-items:center;background:var(--paper)}
+    .hero-copy{max-width:530px;color:var(--bluegray);font-size:17px;line-height:1.8}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+    .hero-note{margin:18px 0 0;color:var(--muted);font-size:13px}
+    .hero-right{display:grid;grid-template-columns:1.6fr 1fr;gap:14px;align-items:center}
+    .hero-photo{min-height:300px;border-radius:8px;background:linear-gradient(135deg,rgba(24,52,81,.08),rgba(54,81,107,.18)),url('https://images.unsplash.com/photo-1586522926314-5f9f6c2d1c57?auto=format&fit=crop&w=1000&q=85') center/cover no-repeat}
+    .contact-stack{display:grid;gap:12px}
+    .contact-card{display:flex;align-items:center;gap:12px;padding:18px 14px;background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 24px rgba(24,52,81,.05)}
+    .contact-icon{display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;border-radius:50%;background:#e8edf1;color:var(--navy);font-size:20px}
+    .contact-card strong{display:block;font-size:14px}
+    .contact-card small{display:block;color:var(--muted);font-size:12px}
+    .contact-arrow{margin-left:auto;color:#587b9d}
+    .section{padding:72px 0}
+    .section.pale{background:var(--paper)}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:26px}
+    .section-head h2{margin:0}
+    .section-head p{max-width:390px;margin:0;color:var(--bluegray)}
+    .small-link{font-size:14px;font-weight:700;color:var(--navy);white-space:nowrap}
+    .small-link:hover{color:#587b9d}
+    .category-grid,.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .category-card,.product-card{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:7px;transition:transform .2s,box-shadow .2s}
+    .category-card:hover,.product-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(24,52,81,.08)}
+    .category-art{height:155px;display:grid;place-items:center;background:var(--pale);color:var(--navy);font-size:42px}
+    .category-art.mahjong{background:linear-gradient(135deg,#e8edf1,#d9e3e9)}
+    .category-art .tile-symbols{padding:12px 18px;background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 10px 22px rgba(24,52,81,.08);font-family:Georgia,serif;letter-spacing:8px}
+    .category-art .box-symbol{font-size:35px;border:1px solid #b9c8d4;padding:15px 24px}
+    .card-copy{padding:15px}
+    .card-copy h3{font-size:17px}
+    .card-copy p{margin:0 0 12px;color:var(--bluegray);font-size:14px}
+    .card-link{color:var(--navy);font-size:13px;font-weight:700}
+    .coming{color:var(--muted);font-size:13px}
+    .product-art{height:165px;display:grid;place-items:center;background:#eef1f3;color:#526b83;font-size:14px;font-weight:700;letter-spacing:1px}
+    .product-art:before{content:"PRODUCT IMAGE";border:1px dashed #aebdca;padding:16px 20px;border-radius:4px}
+    .product-card .card-copy h3{font-size:16px}
+    .about-band{padding:72px 0;background:var(--pale)}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+    .about-copy p{color:var(--bluegray)}
+    .about-photo{min-height:300px;border-radius:8px;background:linear-gradient(135deg,rgba(24,52,81,.08),rgba(24,52,81,.02)),url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85') center/cover no-repeat}
+    .service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .service-card{padding:24px;background:#fff;border:1px solid var(--line);border-radius:8px}
+    .service-top{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+    .service-num{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#e2eaf0;color:var(--navy);font-size:13px;font-weight:800}
+    .service-card p{color:var(--bluegray);font-size:15px;margin-bottom:14px}
+    .cta{padding:64px 0;background:var(--navy);color:#fff}
+    .cta-inner{display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .cta h2,.cta p,.cta .eyebrow{color:#fff}
+    .cta p{margin-bottom:0;color:#e0e7ee}
+    .cta .eyebrow:before{background:#fff}
+    .cta .btn{background:#fff;border-color:#fff;color:var(--navy)!important}
+    .cta .btn:hover{background:#e8edf1}
+    footer{padding:30px 0;background:#f7f7f4}
+    .footer-top{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-bottom:22px}
+    .footer-links{display:flex;flex-wrap:wrap;gap:18px;font-size:13px;font-weight:700}
+    .copyright{padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+    @media(max-width:900px){.nav{align-items:flex-start;padding:18px 0;flex-direction:column}.navlinks{flex-wrap:wrap;gap:12px 18px}.hero{grid-template-columns:1fr;gap:28px}.hero-right{grid-template-columns:1.3fr 1fr}.category-grid,.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid{gap:25px}}
+    @media(max-width:600px){.navlinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:8px}.navlinks a:not(.btn){padding:8px;background:var(--pale);border-radius:4px}.navlinks .btn{grid-column:1/-1}.hero{padding:42px 0}.hero-right{grid-template-columns:1fr}.hero-photo{min-height:220px}.contact-stack{grid-template-columns:1fr 1fr}.contact-card{padding:12px 9px;gap:8px}.contact-icon{width:32px;height:32px;flex-basis:32px;font-size:16px}.contact-card strong{font-size:12px}.contact-card small{font-size:10px}.section{padding:52px 0}.section-head{align-items:flex-start;flex-direction:column}.category-grid,.product-grid{gap:12px}.category-art{height:120px}.product-art{height:125px}.card-copy{padding:12px}.about-grid{grid-template-columns:1fr}.about-photo{min-height:220px}.service-grid{grid-template-columns:1fr}.cta{padding:48px 0}.cta-inner{align-items:flex-start;flex-direction:column}.footer-top{align-items:flex-start;flex-direction:column}.footer-links{gap:12px}.logo{font-size:21px}}
+  </style>
 </head>
-
 <body>
   <div class="topline"></div>
-
   <header>
     <nav class="nav wrap" aria-label="Main navigation">
       <a class="logo" href="index.html">SOURVIAA<span>.</span></a>
-
       <div class="navlinks">
         <a href="index.html">Home</a>
         <a href="products.html">Products</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
+        <a href="services.html">Sourcing Services</a>
+        <a href="about.html">About Us</a>
         <a href="contact.html">Contact</a>
         <a class="btn" href="contact.html">Let's Talk ↗</a>
       </div>
@@ -719,164 +108,107 @@ h1 {
   </header>
 
   <main>
-    <section class="hero wrap">
-      <div>
-        <div class="eyebrow">Product sourcing & procurement</div>
-
-        <h1>Find the Right Products.<br><span>Source with Confidence.</span></h1>
-
-        <p class="hero-copy">
-          Product discovery, supplier research, and sourcing support
-          designed around your business needs. From distinctive products
-          to new opportunities, we help you move from idea to next step.
-        </p>
-
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Your sourcing partner</p>
+        <h1>From product ideas<br>to sourcing solutions.</h1>
+        <p class="hero-copy">We help businesses explore products, clarify requirements, and discuss potential sourcing options — turning ideas into clear next steps.</p>
         <div class="actions">
           <a class="btn" href="products.html">Explore Products ↗</a>
-          <a class="btn btn-outline" href="services.html">Our Services</a>
+          <a class="btn btn-outline" href="contact.html">Let's Talk</a>
         </div>
-
-        <p class="hero-note">
-          A clear approach to product discovery and sourcing.
-        </p>
+        <p class="hero-note">Product discovery · Supplier research · Procurement support</p>
       </div>
-
-      <div class="visual" role="img" aria-label="Stylized Mahjong tile collection">
-        <div class="visual-label">PRODUCT SPOTLIGHT / 001</div>
-
-        <div class="tile-panel">
-          <div class="tiles" aria-hidden="true">
-            <div class="tile">中</div>
-            <div class="tile">發</div>
-            <div class="tile">北</div>
-            <div class="tile">萬</div>
-            <div class="tile">春</div>
-            <div class="tile">梅</div>
-            <div class="tile">東</div>
-            <div class="tile">南</div>
-            <div class="tile">西</div>
-          </div>
-        </div>
-
-        <div class="visual-bottom">
-          <span>AMERICAN MAHJONG</span>
-          <span>01 / 03</span>
+      <div class="hero-right wrap">
+        <div class="hero-photo" role="img" aria-label="Product sourcing and international trade scene"></div>
+        <div class="contact-stack">
+          <a class="contact-card" href="mailto:hello@sourviaa.com">
+            <span class="contact-icon" aria-hidden="true">✉</span>
+            <span><strong>Email Us</strong><small>hello@sourviaa.com</small></span>
+            <span class="contact-arrow">›</span>
+          </a>
+          <a class="contact-card" href="https://wa.me/8613172484115" target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon" aria-hidden="true">◉</span>
+            <span><strong>WhatsApp</strong><small>Chat with us</small></span>
+            <span class="contact-arrow">›</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="metrics">
-      <div class="metrics-inner wrap">
-        <div class="metric">
-          <strong>PRODUCT DISCOVERY</strong>
-          <span>Explore options that fit your needs.</span>
-        </div>
-        <div class="metric">
-          <strong>SUPPLIER RESEARCH</strong>
-          <span>Compare details before moving forward.</span>
-        </div>
-        <div class="metric">
-          <strong>SOURCING SUPPORT</strong>
-          <span>Coordinate your next steps with clarity.</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section wrap">
-      <div class="section-head">
-        <h2>Selected Products.<br>New Possibilities.</h2>
-        <p>
-          Explore our featured products or get in touch to discuss
-          a product idea, specification, or sourcing request.
-        </p>
-      </div>
-
-      <div class="product">
-        <div class="product-visual" role="img" aria-label="Stylized American Mahjong tiles">
-          <div class="tile-panel">
-            <div class="tiles" aria-hidden="true">
-              <div class="tile">一</div>
-              <div class="tile">二</div>
-              <div class="tile">三</div>
-              <div class="tile">春</div>
-              <div class="tile">花</div>
-              <div class="tile">鳥</div>
-              <div class="tile">東</div>
-              <div class="tile">南</div>
-              <div class="tile">西</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-info">
-          <span class="tag">Featured product</span>
-          <h3>American Mahjong</h3>
-          <p>
-            A classic game with distinctive character. Explore product
-            options and contact us to discuss availability, specifications,
-            and potential customization.
-          </p>
-          <a class="btn btn-dark" href="mahjong.html">View Product ↗</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="services">
-      <div class="section wrap">
+    <section class="section pale">
+      <div class="wrap">
         <div class="section-head">
-          <h2>From Product Idea<br>to Sourcing Plan.</h2>
-          <p>
-            Practical sourcing support to help you evaluate options
-            and make informed purchasing decisions.
-          </p>
+          <div><p class="eyebrow">Catalogs</p><h2>Explore Our Product Categories</h2></div>
+          <a class="small-link" href="products.html">View All Products ↗</a>
         </div>
+        <div class="category-grid">
+          <a class="category-card" href="mahjong.html">
+            <div class="category-art mahjong"><span class="tile-symbols">中 發 北</span></div>
+            <div class="card-copy"><h3>American Mahjong</h3><p>Classic tiles. Modern play.</p><span class="card-link">Explore →</span></div>
+          </a>
+          <div class="category-card">
+            <div class="category-art">⌂</div>
+            <div class="card-copy"><h3>Home &amp; Living</h3><p>Future category</p><span class="coming">Coming Soon</span></div>
+          </div>
+          <div class="category-card">
+            <div class="category-art">◇</div>
+            <div class="card-copy"><h3>Lifestyle Products</h3><p>Future category</p><span class="coming">Coming Soon</span></div>
+          </div>
+          <div class="category-card">
+            <div class="category-art"><span class="box-symbol">＋</span></div>
+            <div class="card-copy"><h3>Custom Sourcing</h3><p>Tell us what you need.</p><a class="card-link" href="contact.html#inquiry">Make a Request →</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">Featured products</p><h2>A Closer Look at Selected Products</h2></div>
+          <a class="small-link" href="products.html">View All Products ↗</a>
+        </div>
+        <div class="product-grid">
+          <a class="product-card" href="mahjong.html"><div class="product-art"></div><div class="card-copy"><h3>American Mahjong Set</h3><p>Explore product details.</p><span class="card-link">View Details →</span></div></a>
+          <a class="product-card" href="mahjong.html"><div class="product-art"></div><div class="card-copy"><h3>Mahjong Tile Set</h3><p>Discover available options.</p><span class="card-link">View Details →</span></div></a>
+          <a class="product-card" href="mahjong.html"><div class="product-art"></div><div class="card-copy"><h3>Mahjong Set — Style 03</h3><p>Discuss styles and specifications.</p><span class="card-link">View Details →</span></div></a>
+          <a class="product-card" href="mahjong.html"><div class="product-art"></div><div class="card-copy"><h3>Mahjong Set — Style 04</h3><p>Ask about sourcing options.</p><span class="card-link">View Details →</span></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-band">
+      <div class="wrap about-grid">
+        <div class="about-copy">
+          <p class="eyebrow">About Sourviaa</p>
+          <h2>A Practical Approach to Product Sourcing</h2>
+          <p>Sourviaa helps businesses explore product opportunities, clarify requirements, and discuss potential sourcing solutions.</p>
+          <p>We believe every project starts with clear communication and a shared understanding of what matters.</p>
+          <a class="btn" href="about.html">Learn More ↗</a>
+        </div>
+        <div class="about-photo" role="img" aria-label="Neutral image representing product sourcing and logistics"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">Our services</p><h2>How We Can Support Your Sourcing Needs</h2></div>
+          <a class="small-link" href="services.html">All Services ↗</a>
+        </div>
         <div class="service-grid">
-          <article class="service">
-            <div class="service-num">01 / DISCOVER</div>
-            <h3>Product Discovery</h3>
-            <p>
-              Define product needs, specifications, and preferences
-              to identify relevant sourcing possibilities.
-            </p>
-          </article>
-
-          <article class="service">
-            <div class="service-num">02 / RESEARCH</div>
-            <h3>Supplier Research</h3>
-            <p>
-              Explore potential suppliers and review relevant product
-              details before deciding how to proceed.
-            </p>
-          </article>
-
-          <article class="service">
-            <div class="service-num">03 / COORDINATE</div>
-            <h3>Sourcing Coordination</h3>
-            <p>
-              Coordinate product requirements, sample discussions,
-              and purchasing details according to your project.
-            </p>
-          </article>
-        </div>
-
-        <div class="service-action">
-          <a class="btn btn-outline" href="services.html">Explore Sourcing Services ↗</a>
+          <article class="service-card"><div class="service-top"><span class="service-num">01</span><h3>Product Discovery</h3></div><p>Clarify product needs and explore suitable options for your requirements.</p><a class="card-link" href="services.html">Learn More →</a></article>
+          <article class="service-card"><div class="service-top"><span class="service-num">02</span><h3>Supplier Research</h3></div><p>Research potential supplier directions and review relevant product details.</p><a class="card-link" href="services.html">Learn More →</a></article>
+          <article class="service-card"><div class="service-top"><span class="service-num">03</span><h3>Procurement Support</h3></div><p>Coordinate quotation details and practical next steps for your project.</p><a class="card-link" href="services.html">Learn More →</a></article>
         </div>
       </div>
     </section>
 
     <section class="cta">
-      <div class="cta-inner wrap">
-        <div>
-          <div class="eyebrow">Start a conversation</div>
-          <h2>Have a Product in Mind?</h2>
-          <p>
-            Tell us what you're looking for. Let's discuss your product
-            requirements and potential sourcing options.
-          </p>
-        </div>
-        <a class="btn" href="contact.html">Discuss Your Project ↗</a>
+      <div class="wrap cta-inner">
+        <div><p class="eyebrow">Start a conversation</p><h2>Have a Product in Mind?</h2><p>Tell us what you're looking for. Let's discuss your requirements and potential sourcing options.</p></div>
+        <a class="btn" href="contact.html">Let's Talk ↗</a>
       </div>
     </section>
   </main>
@@ -886,21 +218,12 @@ h1 {
       <div class="footer-top">
         <a class="logo" href="index.html">SOURVIAA<span>.</span></a>
         <div class="footer-links">
-          <a href="products.html">Products</a>
-          <a href="services.html">Services</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+          <a href="products.html">Products</a><a href="services.html">Sourcing Services</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
         </div>
       </div>
-
-      <div class="copyright">
-        © <span id="year">2026</span> Sourviaa. All rights reserved.
-      </div>
+      <div class="copyright">© <span id="year">2026</span> Sourviaa. All rights reserved.</div>
     </div>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
 </html>
