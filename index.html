@@ -33,7 +33,23 @@
     h2{margin-bottom:12px;font-size:clamp(28px,3.3vw,40px);letter-spacing:-.8px}
     h3{margin-bottom:8px;font-size:20px}
     .muted{color:var(--bluegray)}
-    .hero{padding:66px 0;display:grid;grid-template-columns:1fr 1.05fr;gap:42px;align-items:center;background:var(--paper)}
+    
+.hero {
+    padding: 66px 0;
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 42px;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(247, 247, 244, 0.90) 0%,
+            rgba(238, 243, 247, 0.78) 50%,
+            rgba(224, 234, 243, 0.72) 100%
+        ),
+        url('https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=2000&q=85')
+        center / cover no-repeat;
+}
     .hero-copy{max-width:530px;color:var(--bluegray);font-size:17px;line-height:1.8}
     .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
     .hero-note{margin:18px 0 0;color:var(--muted);font-size:13px}
